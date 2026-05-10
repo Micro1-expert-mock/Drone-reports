@@ -1,0 +1,51 @@
+Drone Prototype and Design
+Prototype Analysis Report
+Prepared on 9 May 2026 from the published project title, provided requirements, and accessible page metadata. The public Figma Site was reachable only as a JavaScript shell in this environment, so the report is grounded in the supplied concept brief rather than a full layer-by-layer screen inspection.
+Source URL: https://hungry-sticky-12522117.figma.site | Design brief reviewed: 500 L water payload, 20 km battery range, 40 km diesel range, one trained pilot, 6 blades on 3 BLDC motors.
+Executive Summary
+The concept is ambitious and visually likely intended as a high-capacity heavy-lift or hybrid personal utility drone. At the requirements level, however, the proposal combines several constraints that are difficult to satisfy together: very high liquid payload, human-carrying operation, long mission range, battery and diesel dual-mode endurance, and a low motor count. That combination places the concept closer to a certified eVTOL or hybrid rotorcraft program than to a conventional drone prototype.
+The strongest value of the current prototype is its clarity of intent: it frames a mission-led transport system rather than a generic drone. The main weakness is feasibility definition. Key architecture choices such as rotor layout, redundancy, takeoff mass, energy system, pilot safety, and certification path are still unresolved or internally inconsistent in the written brief.
+What The Brief Establishes Well
+•	The prototype is mission-specific and not vague about its purpose: carrying large amounts of water over meaningful distance.
+•	A dual-energy narrative is already present, which suggests the designer is thinking about endurance rather than only static lifting power.
+•	Human piloting is explicitly acknowledged, which surfaces safety, controls, and ergonomics early instead of leaving them implicit.
+•	Propulsion efficiency is a stated concern through the mention of high-efficiency BLDC motors.
+Critical Feasibility Assessment
+A 500 litre water payload alone is approximately 500 kg before counting airframe, landing gear, pilot, batteries, fuel, tanks, motors, control electronics, and structure. Even a very optimistic mass budget likely pushes the aircraft toward a gross takeoff weight more typical of a small experimental rotorcraft than a normal multirotor drone.
+The propulsion description is the biggest red flag. '6 blades running on 3 BLDC motors' most naturally reads as three two-blade propellers. That is a very low number of thrust points for a vehicle expected to lift liquid payload and a human pilot. A tricopter-style architecture can be stabilized, but for this size class it creates major issues in redundancy, control authority, yaw reliability, and rotor loading. If the intention was six rotors driven by six motors, the brief should say that explicitly because it changes the risk profile substantially.
+Feasibility risk scan
+Area	Observation	Risk	Design implication
+Payload	500 L water implies roughly 500 kg liquid mass alone	High	Needs full mass budget and center-of-gravity analysis
+Propulsion	3 BLDC motors for a human-carrying heavy-lift craft is likely under-redundant	High	Revisit rotor count, rotor diameter, and failure modes
+Battery mode	20 km battery range at this scale demands very high onboard energy	High	Likely requires hybrid assist or much lower payload
+Diesel mode	40 km diesel range is more plausible than battery but adds drivetrain complexity	Medium-High	Clarify generator, transmission, and fuel safety strategy
+Human pilot	Pilot carriage changes the vehicle into a regulated safety-critical platform	High	Add occupant protection, escape logic, and certifiable controls
+Liquid load	Water slosh affects stability during maneuvers	High	Use baffled tanks and dynamic slosh modeling
+Prototype Design Readout
+From a design review standpoint, the concept has the right instinct to communicate capability through headline numbers. What it now needs is a clearer systems diagram and tighter requirement hierarchy. At the moment, the brief mixes mission goals, mechanical architecture, and performance claims in one line. That makes the prototype sound bold, but it makes validation difficult.
+•	Separate mission requirements from engineering assumptions. Example: 'carry 500 L water' is a mission requirement; '3 BLDC motors' is an architecture choice.
+•	Show the aircraft in at least three views: orthographic layout, propulsion layout, and operational flow with loading, takeoff, cruise, discharge, and return.
+•	Visualize mass distribution clearly. For a liquid-carrying aircraft, tank placement is one of the most important design decisions.
+•	Clarify whether the pilot is onboard, in a saddle/cockpit, or a remote operator. The phrase 'carrying capacity of 1 person as a trained drone pilot' is ambiguous.
+User Experience And Prototype Communication
+If this Figma prototype is intended for investors, reviewers, or engineering handoff, its next improvement should be narrative structure rather than ornament. A strong presentation flow would move from problem and use case, to vehicle architecture, to performance targets, to safety systems, to validation plan. That sequence helps the audience judge whether the design is visionary, experimental, or implementation-ready.
+•	Use a single specification panel with units, assumptions, and test status for every key number.
+•	Mark conceptual values separately from validated values so the viewer can see what is estimated versus demonstrated.
+•	Include a hazard and mitigation board. For this concept, battery fire, rotor failure, slosh instability, emergency landing, and pilot protection are core concerns.
+•	Add one page that compares battery-only, diesel-only, and hybrid configurations. That decision is central to the concept.
+Recommended Engineering Clarifications
+Questions that should be answered before the next prototype round
+Question	Why it matters	Recommended next action
+Is the pilot onboard or remote?	This changes vehicle class, safety design, and legal pathway	Lock the operational concept before refining visuals
+Are there 3 rotors or 6 rotors?	Current wording creates a major architecture ambiguity	Publish a propulsion schematic with rotor and motor count
+What is the gross takeoff mass?	Range, thrust, and energy sizing all depend on it	Build a first-order mass budget spreadsheet
+How is the water stored?	Liquid movement can destabilize the craft	Design baffled tanks and show center-of-gravity envelope
+What is the powertrain mode switch?	Battery and diesel coexistence can be series-hybrid, parallel-hybrid, or separate modes	Create an energy system block diagram
+What failure case can the aircraft survive?	Human-carrying systems need redundancy logic	Define minimum safe landing capability after a single fault
+Bottom Line
+This is a compelling concept prototype, but it is not yet a resolved engineering design. The biggest opportunity is to turn it from a headline-driven idea into a traceable system proposal with explicit assumptions, redundancy strategy, and testable mass and energy budgets. If the goal is to keep the concept bold while making it credible, the next revision should simplify ambiguity, show architecture clearly, and separate vision statements from validated numbers.
+Priority Next Steps
+•	Reframe the concept as either a heavy-lift unmanned drone or a human-carrying hybrid VTOL, not both at once unless the architecture is proven.
+•	Replace the short brief with a specification matrix that includes payload, empty weight, gross weight, endurance, cruise speed, rotor count, and safety assumptions.
+•	Build a visual systems page in Figma showing propulsion, tank system, pilot interface, and control redundancy.
+•	Run a first-pass feasibility study on thrust, hover power, and energy density before further visual detailing.
